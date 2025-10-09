@@ -38,14 +38,14 @@ header {
 
 
 header {
-    position: fixed;  /* Changed from relative/absolute to fixed */
+    position: fixed;  
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;    /* Ensure it stays above other content */
-    background-color: white; /* Or your preferred background color */
-    box-shadow: 0 10px 10px rgba(0,0,0,0.1); /* Optional shadow */
-    padding: 15px 5%; /* Adjust as needed */
+    z-index: 1000;    
+    background-color: white; 
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1); 
+    padding: 15px 5%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
