@@ -6,7 +6,7 @@
             nav.classList.toggle('active');
             hamburger.classList.toggle('active');
             
-            // Animate links
+          
             navLinks.forEach((link, index) => {
                 if (link.style.animation) {
                     link.style.animation = '';
@@ -16,7 +16,7 @@
             });
         });
 
-        // Close menu when clicking a link
+      
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
@@ -28,7 +28,7 @@
         });
 
 
-        //HEADER
+        
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('.slide');
             const content = document.querySelector('.slider-content');
@@ -71,25 +71,24 @@
             let currentDirection = 0;
 
             function changeSlide() {
-                // Remove active class from current slide
+              
                 slides[currentSlide].classList.remove('active');
                 slides[currentSlide].classList.add(`exit-${directions[currentDirection]}`);
-                
-                // Hide current content
+             
                 content.classList.remove('active-content');
                 
-                // Update to next slide and direction
+             
                 currentSlide = (currentSlide + 1) % slides.length;
                 currentDirection = (currentDirection + 1) % directions.length;
                 
-                // Update content
+            
                 setTimeout(() => {
                     content.querySelector('h1').textContent = punchlines[currentSlide].h1;
                     content.querySelector('p').textContent = punchlines[currentSlide].p;
                     content.classList.add('active-content');
                 }, 500);
                 
-                // Add active class to new slide
+               
                 setTimeout(() => {
                     slides.forEach(slide => {
                         slide.classList.remove('exit-left', 'exit-right', 'exit-up', 'exit-down');
@@ -98,15 +97,13 @@
                 }, 1000);
             }
 
-            // Change slide every 5 seconds
+            
             setInterval(changeSlide, 5000);
         });
 
 
 
         //LOGOS SCROLLING
-
-        // Pause animation on hover for better UX
         document.addEventListener('DOMContentLoaded', function() {
             const logoSlide = document.querySelector('.logos-slide');
             
@@ -118,24 +115,23 @@
                 this.style.animationPlayState = 'running';
             });
 
-            // Adjust animation speed based on screen size
+        
             function adjustAnimationSpeed() {
                 const screenWidth = window.innerWidth;
                 const duration = screenWidth < 768 ? 35 : 25;
                 logoSlide.style.animationDuration = `${duration}s`;
             }
 
-            // Initial adjustment
+        
             adjustAnimationSpeed();
             
-            // Adjust on resize
+          
             window.addEventListener('resize', adjustAnimationSpeed);
         });
 
 
         //ABOUT US
 
-         // Animation for benefit cards on scroll
          document.addEventListener('DOMContentLoaded', function() {
             const benefitCards = document.querySelectorAll('.benefit-card');
             
@@ -157,7 +153,6 @@
                 observer.observe(card);
             });
 
-            // Gallery hover effect
             const galleryItems = document.querySelectorAll('.gallery-item');
             galleryItems.forEach(item => {
                 item.addEventListener('mouseenter', () => {
@@ -178,12 +173,11 @@
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Simulate form submission
+            
                 formMessage.textContent = "Thank you for your message! We'll get back to you soon.";
                 formMessage.classList.remove('error');
                 formMessage.classList.add('success');
-                
-                // Reset form
+             
                 setTimeout(() => {
                     contactForm.reset();
                     formMessage.classList.remove('success');
@@ -191,7 +185,7 @@
                 }, 5000);
             });
             
-            // Add animation to form elements
+        
             const formGroups = document.querySelectorAll('.form-group');
             
             formGroups.forEach((group, index) => {
@@ -208,10 +202,8 @@
 
         //FOOTER
 
-         // Auto-update copyright year
          document.getElementById('year').textContent = new Date().getFullYear();
         
-         // Smooth scroll for anchor links
          document.querySelectorAll('.footer-links a').forEach(anchor => {
              anchor.addEventListener('click', function(e) {
                  e.preventDefault();
@@ -224,13 +216,10 @@
 
 
          //OUR BRANDS
-
-         // Toggle main categories
         function toggleCategory(button) {
             const category = button.parentElement;
             category.classList.toggle('active');
             
-            // Close other open categories
             document.querySelectorAll('.main-category').forEach(item => {
                 if (item !== category && item.classList.contains('active')) {
                     item.classList.remove('active');
@@ -238,23 +227,21 @@
             });
         }
         
-        // Show brands for selected subcategory
         function showBrands(category, subcategory) {
-            // Hide all brand contents first
+          
             document.querySelectorAll('.brands-content').forEach(content => {
                 content.classList.remove('active');
             });
             
-            // Hide empty state
+        
             document.querySelector('.empty-state').style.display = 'none';
             
-            // Set active state on clicked subcategory
+         
             document.querySelectorAll('.subcategory-item').forEach(item => {
                 item.classList.remove('active');
             });
             event.target.parentElement.classList.add('active');
-            
-            // Show selected brand content with animation
+       
             const contentId = `${category}-${subcategory}`;
             const content = document.getElementById(contentId);
             if (content) {
@@ -262,15 +249,15 @@
             }
         }
         
-        // Initialize first category as active
+       
         document.addEventListener('DOMContentLoaded', function() {
-            // Open first category by default
+        
             const firstCategory = document.querySelector('.main-category');
             if (firstCategory) {
                 firstCategory.classList.add('active');
             }
             
-            // Set first subcategory as active
+           
             const firstSubcategory = document.querySelector('.subcategory-item');
             if (firstSubcategory) {
                 firstSubcategory.classList.add('active');
