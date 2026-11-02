@@ -23,19 +23,6 @@ body {
     background-color: var(--zuri-white);
     padding-top: 80px;
 }
-/*
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    position: fixed;
-    background-color: transparent;
-    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1);
-    height: 70px;
-  
-}*/
-
 
 header {
     position: fixed;  
@@ -369,39 +356,6 @@ section {
     gap: 20px;
 }
 
-/*
-.contact-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--zuri-white);
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.contact-icon:hover {
-    background: var(--zuri-sunshine);
-    color: var(--zuri-charcoal);
-    transform: scale(1.1);
-}
-
-@media (max-width: 1024px) {
-    .slider-content {
-        left: 5%;
-        max-width: 500px;
-    }
-
-    .slider-content h1 {
-        font-size: 2.8rem;
-    }
-}*/
-
 .contact-icons {
     position: fixed;
     right: 40px;
@@ -437,7 +391,7 @@ section {
 
 @media (max-width: 768px) {
     .contact-icons {
-        display: none; /* Hide on mobile as requested */
+        display: none; 
     }
 }
 
@@ -1597,7 +1551,7 @@ textarea.form-control {
 }
 
 .footer-bottom {
-    /*background: var(--zuri-teal);*/
+   
     background: linear-gradient(135deg, var(--zuri-teal) 0%, var(--zuri-green) 100%);
     padding: 20px 0;
     text-align: center;
